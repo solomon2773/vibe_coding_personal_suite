@@ -283,14 +283,10 @@ This toolkit was created to bridge the gap between:
 
 By combining these elements, you can create design prompts that truly capture your unique vibe and professional identity.
 
-## 🌟 Success Stories
-
-> *"This toolkit helped me create a portfolio that perfectly captured my UX design philosophy and technical skills. The structured approach made it easy to communicate my vision to developers."* - Sarah Chen, UX Designer
-
-> *"As a startup founder, I used this to create a comprehensive design prompt for our SaaS platform. It saved us weeks of back-and-forth with our development team."* - Marcus Rodriguez, Tech Entrepreneur
-
----
 
 **Ready to create your vibe-coded website? Start with your data, pick a template, choose an example, add your style, and let's build something amazing! 🚀**
+
+https://solomontsao.com
+YouTube Channel : https://www.youtube.com/@solomonhorizon
 
 *Share your success stories and contribute to make this toolkit even better for the community.*
