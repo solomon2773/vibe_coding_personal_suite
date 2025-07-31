@@ -1,0 +1,61 @@
+design_prompt_template_mcp# 1. Project Overview
+- Project Name
+- Tagline/Summary
+- Key Features (including Multi-Agent Collaboration and MCP)
+
+# 2. Technology Stack
+- Frontend
+- Styling
+- Core Logic (including agentic reasoning engine)
+- Backend/API Integration (e.g., LangGraph, AutoGen, OpenAI API)
+- State Management (Redux/Zustand + MCP)
+- Build Tool
+- Deployment
+
+# 3. Architecture Design
+- Core Components
+- Multi-Agent & Agentic Agent Design
+  - Agent Roles (Planner, Executor, Validator, etc.)
+  - Model Context Protocol (MCP) for shared agent memory
+  - Agent Orchestration Strategy
+
+# 4. User Interface Design
+- Main Layout
+- Key UI Features (e.g., Agent Timeline, MCP Viewer)
+- Responsiveness
+
+# 5. Data Flow Architecture
+- State/Data Type Flow (User → Agents → UI)
+- MCP Synchronization and Agent Communication
+- API/External Integration Flow
+
+# 6. Security & Performance
+- Security (agent sandboxing, input validation)
+- Performance Optimizations (lazy loading, memoization)
+- Error Handling (agent fallback, MCP conflict resolution)
+
+# 7. Development Phases
+- Phase 1: Core Infrastructure (UI, agent engine, MCP)
+- Phase 2: Multi-Agent Integration
+- Phase 3: UI Polish and Enhancements
+- Phase 4: Advanced Agent Capabilities (tools, autonomy)
+
+# 8. Getting Started
+- Initialize project
+- Install dependencies
+- Set up API keys/environment variables
+- Follow project structure
+- Implement agent and MCP core
+
+# 9. Development Workflow
+- Feature branching
+- Type safety (TypeScript + Zod)
+- Agent testing (unit + integration)
+- Documentation (MCP schema, agent protocols)
+
+# 10. Architecture
+- Architectural Pattern (Agent-Oriented + Component-Based)
+- Presentation Layer (React-based UI)
+- Business Logic Layer (Multi-Agent Orchestration + MCP)
+- Data Layer (API calls, shared memory, local storage)
+- State Management (Redux/Zustand + Model Context Protocol)

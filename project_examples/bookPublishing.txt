@@ -1,220 +1,181 @@
-Project Overview
-Project Name: FNova Publishing Website Redesign
+# Project Overview
 
-Tagline/Summary: Empowering authors to share meaningful stories that uplift and inspire, making the world better one book at a time.
+## Project Name: **FNova Publishing Website Redesign**
 
-Key Features:
+### Tagline/Summary  
+*Empowering authors to share meaningful stories that uplift and inspire, making the world better one book at a time.*
 
-Dynamic display of book catalog with detailed book pages.
+---
 
-Author submission portal (future enhancement).
+## 1. Key Features
+- Dynamic display of book catalog with detailed book pages.
+- "About Us" section with mission and vision.
+- Contact section with address and form.
+- Author submission portal (future enhancement).
+- Integration with external book purchase platforms (Amazon, Goodreads).
 
-"About Us" section with mission and vision.
+---
 
-Contact/address information.
+## 2. Technology Stack
 
-Multi-Agent Collaboration and Model Context Protocol (MCP) for internal content management and potentially for assisting authors (future). 
+### Frontend:
+- **React** for UI development.
 
-2. Technology Stack
+### Styling:
+- **Tailwind CSS** (proposed) for rapid, responsive, and modern design.
+  - Alternative: Styled Components (if component-scoped styling is preferred).
 
-Frontend: React 
+### Core Logic:
+- Client-side routing and UI rendering.
+- Simple form handling and validation (for Contact, future Author Portal).
 
-Styling: (To be determined, e.g., Tailwind CSS, Styled Components)
+### Backend/API Integration:
+- **Headless CMS (Strapi or WordPress)** for book data and author profiles.
+- External e-commerce links (Amazon, Goodreads) for book purchase.
 
-Core Logic:
+### State Management:
+- **Zustand** (lightweight state management) for UI state.
+  - Redux only if complex state logic emerges (e.g., filters, favorites).
 
-Agentic reasoning engine for potential internal use (e.g., content analysis, author matching). 
+### Build Tool:
+- **Vite** (proposed for faster dev/build performance) or **Next.js** (if SSR/SEO is prioritized).
 
-Standard website logic for content rendering and navigation.
+### Deployment:
+- **Vercel** (ideal for React/Next.js) or **Netlify** (good for SPA).
 
-Backend/API Integration:
+---
 
-Likely a Content Management System (CMS) API (e.g., Strapi, headless WordPress) for managing book data and author information.
+## 3. Architecture Design
 
-Potentially LangGraph, AutoGen, or OpenAI API for advanced agentic features (future). 
+### Core Components:
+- **Header:** Logo, navigation.
+- **Hero Section:** Tagline and impactful imagery.
+- **Book Catalog/Grid:** List of all books dynamically from CMS.
+- **Book Detail Pages:** Synopsis, author info, and purchase links.
+- **About Us Section:** Mission and vision.
+- **Contact Section:** Address, map embed, and form.
+- **Footer:** Copyright, quick links.
 
+### Additional Components (Future Enhancements):
+- Author Submission Portal (form with file upload).
+- Search/filter for book catalog.
 
-State Management: Redux/Zustand + MCP (for agent-driven features). 
+---
 
-Build Tool: (To be determined, e.g., Vite, Next.js built-in)
+## 4. User Interface Design
 
-Deployment: (To be determined, e.g., Vercel, Netlify)
+### Main Layout:
+- Clean, modern, and visually engaging design.
+- Clear navigation between **Books**, **About Us**, and **Contact**.
 
-3. Architecture Design
-Core Components:
+### Key UI Features:
+- **Book Cards:** Cover, title, author (hover animation for details).
+- **Book Detail Pages:** Extended details, related books, and purchase links.
+- **Contact Form:** Simple validated form (name, email, message).
+- **Responsive Design:** Mobile-first layout with optimized scaling.
 
-Header (Logo, Navigation)
+### Design Direction:
+- Minimalist color palette (whitespaces, accent color for CTAs).
+- Typography emphasizing readability and elegance (serif for titles, sans-serif for body).
+- Subtle animations for hover and transitions (CSS/Framer Motion).
 
-Hero Section (Tagline, imagery)
+---
 
-Book Catalog/Grid
+## 5. Data Flow Architecture
 
-Individual Book Detail Pages
+### Data Sources:
+- **CMS API**: Book listings, author details.
+- **Static Content**: "About Us", contact details.
 
-About Us Section
+### Flow:
+1. **Frontend** fetches data via CMS REST/GraphQL API.
+2. **UI** renders dynamic components (catalog, detail pages).
+3. **Contact Form** sends submissions via API endpoint or third-party form handler (e.g., Formspree).
+4. Future: **Author Portal** handles form submissions with file upload to backend.
 
-Contact Section
+---
 
-Footer (Copyright, Address)
+## 6. Security & Performance
 
+### Security:
+- Input validation for forms.
+- HTTPS/SSL enforced (platform-managed via Vercel/Netlify).
+- Secure CMS API endpoints (read-only public tokens).
 
-Multi-Agent & Agentic Agent Design (Primarily for internal tools initially, or future author-facing features) 
+### Performance Optimizations:
+- Image lazy loading and compression (using Next/Image or similar tools).
+- Code splitting and bundling (automatic in Vite/Next.js).
+- CDN-backed hosting for static assets.
 
-Agent Roles:
+### Error Handling:
+- Graceful UI messages for failed data loads.
+- Global fallback pages for 404 and API errors.
 
-Content Agent: Assists in populating book details, potentially suggesting categorization. (Future)
+---
 
-Editorial Agent: Provides feedback or analysis on submitted manuscripts. (Future)
+## 7. Development Phases
 
-Marketing Agent: Helps with generating marketing copy or social media blurbs for books. (Future)
+### Phase 1: Core Infrastructure
+- Initialize React project.
+- Implement layout components (Header, Footer, Navigation).
+- Connect CMS API for book data.
 
+### Phase 2: Book Catalog & Detail Pages
+- Create catalog grid and dynamic book detail pages.
+- Add external links (Amazon, Goodreads).
 
-Model Context Protocol (MCP) for shared agent memory: Enables agents to share common data regarding books, authors, and publishing guidelines. 
+### Phase 3: About Us & Contact
+- Build "About Us" section.
+- Add Contact section:  
+  *Address: 3948 Legacy Dr. Ste. 106-371 Plano, TX 75023.*
 
+### Phase 4: Enhancements
+- Filtering/sorting for book catalog.
+- Author submission portal (future).
 
-Agent Orchestration Strategy: (To be determined based on specific agent use cases, e.g., sequential, parallel, or hierarchical workflows.) 
+---
 
-4. User Interface Design
-Main Layout:
+## 8. Getting Started
 
-Clean, modern, and inviting design.
+1. **Initialize Project:**  
+   - `npm create vite@latest` (or Next.js if SSR is chosen).  
 
-Prominent display of books.
+2. **Install Dependencies:**  
+   - React, Tailwind CSS (or preferred styling).  
+   - Axios (for API calls).  
 
-Clear navigation to "Books," "About Us," and "Contact."
+3. **Configure CMS API:**  
+   - Set up API keys (if needed).  
 
-Key UI Features:
+4. **Implement Components:**  
+   - Start with static mock data, then integrate API.
 
-Book Cards: Visually appealing cards for each book with cover, title, and author.
+5. **Deploy:**  
+   - Push to GitHub → Deploy to Vercel/Netlify.
 
-Book Detail Pages: Dedicated pages for each book with synopsis, author info, purchase links (Amazon, Goodreads), and potentially related books.
+---
 
+## 9. Development Workflow
 
-Agent Timeline / MCP Viewer: (Internal tool for monitoring agent activities, not user-facing initially). 
+- **Feature branching (Git).**
+- **TypeScript:** For type safety (optional but recommended).
+- **Unit testing (Jest/React Testing Library):** For UI components and API calls.
+- **Responsive design checks:** Manual + automated (Lighthouse).
 
+---
 
-Responsiveness: Fully responsive design for optimal viewing on desktop, tablet, and mobile devices. 
+## 10. Architecture (Simplified)
 
-5. Data Flow Architecture
+### Presentation Layer:
+- **React UI Components** (Header, Hero, Catalog, Detail, About, Contact).
 
-State/Data Type Flow (User → Agents → UI): 
+### Business Logic:
+- API fetching (CMS book data).
+- Local UI state management (filters, modals).
 
-User Input: Browse actions, form submissions (future author portal).
+### Data Layer:
+- Headless CMS (Strapi/WordPress).
+- External APIs (Amazon/Goodreads for purchase links).
 
-Agents: Internal agents may process data (e.g., for content management).
+---
 
-UI: Renders fetched book data, author information, and static content.
-
-
-MCP Synchronization and Agent Communication: Agents will communicate and synchronize data relevant to content management and publishing workflows via MCP. 
-
-API/External Integration Flow:
-
-Fetch book data from CMS API.
-
-Link to external e-commerce platforms (Amazon, Goodreads).
-
-Future integration with AI APIs for agentic capabilities.
-
-6. Security & Performance
-Security:
-
-Input validation for any user-submitted forms. 
-
-(Agent sandboxing for future agent integrations, if applicable). 
-
-Performance Optimizations:
-
-Lazy loading of images and off-screen components. 
-
-Memoization for frequently accessed data or complex computations. 
-
-Error Handling:
-
-Graceful display of error messages for API failures.
-
-(Agent fallback mechanisms for internal agent errors). 
-
-7. Development Phases
-
-Phase 1: Core Infrastructure: 
-
-Set up React project.
-
-Implement basic UI components (Header, Footer, Navigation).
-
-Integrate with a CMS for initial book data display.
-
-Phase 2: Book Catalog & Detail Pages:
-
-Develop book listing and individual book detail pages.
-
-Implement filtering/sorting if needed for a large catalog.
-
-Phase 3: About Us & Contact:
-
-Build out the "About Us" section with Mission and Vision.
-
-Create the Contact section with address: 3948 Legacy Dr. Ste. 106-371 Plano, TX 75023.
-
-
-Phase 4: Advanced Agent Capabilities (Future): 
-
-Integrate agentic reasoning engine for internal content management or author assistance.
-
-Implement Multi-Agent Collaboration and MCP for specific workflows.
-
-8. Getting Started
-
-Initialize project: Create a new React project using a chosen build tool. 
-
-
-Install dependencies: Install necessary libraries for React, styling, state management, etc. 
-
-
-Set up API keys/environment variables: Configure access to the CMS API and any other external services. 
-
-
-Follow project structure: Adhere to a logical and scalable folder structure. 
-
-
-Implement agent and MCP core: (As needed for initial internal agent features). 
-
-9. Development Workflow
-
-Feature branching: Utilize a feature branching strategy for development. 
-
-
-Type safety: Employ TypeScript for strong typing and Zod for schema validation where applicable. 
-
-
-Agent testing: Implement unit and integration tests for any agentic functionalities. 
-
-
-Documentation: Document MCP schema and agent protocols as they are developed. 
-
-10. Architecture
-
-Architectural Pattern: Agent-Oriented + Component-Based. 
-
-
-Presentation Layer: React-based UI for rendering all visual elements. 
-
-Business Logic Layer:
-
-Multi-Agent Orchestration (for internal processes). 
-
-MCP for shared memory among agents and potentially for managing website content in an agent-driven way. 
-
-Traditional business logic for data fetching and display.
-
-Data Layer:
-
-API calls to CMS and external services (Amazon, Goodreads). 
-
-Shared memory (via MCP for agents). 
-
-Local storage (for user preferences, if any). 
-
-
-State Management: Redux/Zustand for global UI state and Model Context Protocol for agent-related shared state. 

@@ -1,0 +1,192 @@
+## Project Status
+This is a chess agent web application project with an agentic AI that plays chess and shows its thinking process in real-time.
+
+## Project Overview
+**ChessMind**: An intelligent chess agent web application featuring:
+- Beautiful, modern chess board interface
+- Real-time AI thinking window showing the agent's reasoning
+- Integration with OpenAI or Claude API for intelligent gameplay
+- Local-only operation (no external chess engines)
+- Responsive design for desktop and mobile
+
+## Technology Stack
+- **Frontend**: React.js with TypeScript
+- **Styling**: Tailwind CSS + Framer Motion for animations
+- **Chess Logic**: Chess.js library for game state management
+- **AI Integration**: OpenAI API or Claude API for agent reasoning
+- **State Management**: React Context API or Zustand
+- **Build Tool**: Vite for fast development
+- **Deployment**: Static hosting (Vercel/Netlify)
+
+## Architecture Design
+
+### Core Components
+
+#### 1. Chess Board Component
+- Interactive 8x8 grid with piece movement
+- Drag-and-drop piece functionality
+- Move validation and highlighting
+- Game state visualization (check, checkmate, stalemate)
+- Move history sidebar
+
+#### 2. AI Agent System
+- **Agent Controller**: Manages AI decision-making process
+- **Thinking Engine**: Processes game state and generates moves
+- **Prompt Templates**: Structured prompts for different game phases
+- **Response Parser**: Extracts moves and reasoning from AI responses
+
+#### 3. Thinking Window
+- Real-time display of AI reasoning process
+- Streaming text updates during move calculation
+- Syntax highlighting for different thinking phases
+- Collapsible/expandable interface
+- Copy-to-clipboard functionality
+
+#### 4. Game State Management
+- Current board position
+- Move history and notation
+- Game status (active, check, checkmate, draw)
+- Player turn management
+- Game settings and preferences
+
+### AI Agent Design
+
+#### Agent Personality & Strategy
+The AI agent will have:
+- **Adaptive Play Style**: Adjusts aggression based on position evaluation
+- **Strategic Thinking**: Considers long-term plans and piece coordination
+- **Tactical Awareness**: Identifies immediate threats and opportunities
+- **Opening Knowledge**: Familiar with common opening principles
+- **Endgame Technique**: Strong endgame play with clear winning plans
+
+#### Thinking Process Structure
+The agent's thinking window will display:
+1. **Position Assessment**: Overall evaluation and key factors
+2. **Candidate Moves**: Top 3-5 move options being considered
+3. **Calculation**: Deep analysis of variations and consequences
+4. **Strategic Planning**: Long-term goals and piece coordination
+5. **Final Decision**: Chosen move with reasoning
+
+#### Prompt Engineering Strategy
+```
+System: You are an expert chess player and coach. Analyze the given chess position and provide:
+1. A brief position assessment (material, structure, king safety)
+2. 3-5 candidate moves with brief reasoning
+3. Deep calculation of the best 2-3 variations
+4. Strategic considerations and long-term plans
+5. Your final move choice with clear justification
+
+Always respond in a structured, coaching-style format that helps the human player understand your thinking process.
+```
+
+### User Interface Design
+
+#### Main Layout
+- **Left Panel**: Chess board (60% width)
+- **Right Panel**: Thinking window and game controls (40% width)
+- **Top Bar**: Game status, player info, settings
+- **Bottom Bar**: Move history, game controls
+
+#### Chess Board Features
+- **Visual Design**: Clean, modern board with subtle shadows
+- **Piece Movement**: Smooth drag-and-drop with visual feedback
+- **Move Indicators**: Arrows and highlights for suggested moves
+- **Status Overlays**: Check indicators, move validation messages
+- **Responsive**: Scales appropriately for different screen sizes
+
+#### Thinking Window Features
+- **Real-time Updates**: Streaming text as AI thinks
+- **Syntax Highlighting**: Different colors for different thinking phases
+- **Scrollable History**: Previous thinking sessions accessible
+- **Export Options**: Save thinking sessions for review
+- **Settings**: Adjustable font size, theme, update frequency
+
+#### Game Controls
+- **New Game**: Start fresh game with AI
+- **Undo Move**: Take back last move
+- **Flip Board**: Rotate board perspective
+- **Game Settings**: Time controls, AI difficulty, thinking depth
+- **Analysis Mode**: Review previous games with AI commentary
+
+### Data Flow Architecture
+
+#### Game State Flow
+1. User makes move → Board updates → Game state changes
+2. AI agent receives new position → Begins analysis
+3. Thinking process streams to UI → User sees reasoning
+4. AI selects move → Board updates → Cycle repeats
+
+#### AI Integration Flow
+1. **Position Encoding**: Convert board state to FEN notation
+2. **Prompt Construction**: Build context-aware prompt with position
+3. **API Call**: Send to OpenAI/Claude with streaming enabled
+4. **Response Processing**: Parse move and extract thinking
+5. **Move Execution**: Apply AI move to board state
+
+### Security & Performance
+
+#### Local-Only Operation
+- No external chess engines or databases
+- All AI reasoning done through API calls
+- No persistent data storage (optional local game history)
+- Client-side move validation
+
+#### Performance Optimizations
+- Debounced API calls to prevent rate limiting
+- Cached position evaluations for repeated positions
+- Lazy loading of game history
+- Efficient re-rendering with React.memo
+
+#### Error Handling
+- Graceful API failure handling
+- Invalid move detection and correction
+- Network timeout management
+- Fallback responses for AI failures
+
+### Development Phases
+
+#### Phase 1: Core Infrastructure
+- Set up React + TypeScript project
+- Implement basic chess board with Chess.js
+- Create game state management
+- Basic move validation and game flow
+
+#### Phase 2: AI Integration
+- Implement OpenAI/Claude API integration
+- Create prompt templates and response parsing
+- Build thinking window component
+- Add streaming text updates
+
+#### Phase 3: UI Polish
+- Implement beautiful chess board design
+- Add animations and transitions
+- Create responsive layout
+- Polish thinking window interface
+
+#### Phase 4: Advanced Features
+- Add game analysis mode
+- Implement move history with AI commentary
+- Create settings and preferences
+- Add export/import functionality
+
+## Getting Started
+When implementing this project:
+1. Initialize React + TypeScript project with Vite
+2. Install dependencies: chess.js, tailwindcss, framer-motion
+3. Set up API keys for OpenAI or Claude
+4. Create basic project structure following the architecture above
+5. Implement core components in order of development phases
+
+## Development Workflow
+- Use feature branches for each component
+- Implement with TypeScript for type safety
+- Test AI integration thoroughly with various positions
+- Optimize for performance and user experience
+- Document prompt engineering experiments
+
+## Architecture
+The application follows a component-based architecture with clear separation of concerns:
+- **Presentation Layer**: React components for UI
+- **Business Logic Layer**: Game state and AI agent logic
+- **Data Layer**: API integration and local storage
+- **State Management**: Centralized state with React Context
