@@ -1,0 +1,294 @@
+# Project Overview
+
+## Project Name: **Alex Chen - Creative Developer Portfolio**
+
+### Tagline/Summary  
+*Full-stack developer and UI/UX designer crafting digital experiences that blend technical excellence with creative innovation.*
+
+---
+
+## 1. Key Features
+- **Interactive Hero Section**: Animated introduction with typing effect and floating elements
+- **Dynamic Project Showcase**: Filterable portfolio with case studies and live demos
+- **Skills Visualization**: Interactive skill tree with proficiency levels
+- **Blog/Thought Leadership**: Technical articles and design insights
+- **Contact Integration**: Direct messaging with calendar booking
+- **Dark/Light Mode Toggle**: Seamless theme switching
+- **Resume Download**: PDF generation with current projects
+
+---
+
+## 2. Technology Stack
+
+### Frontend:
+- **Next.js 14** with App Router for optimal performance and SEO
+- **React 18** with hooks and modern patterns
+- **TypeScript** for type safety and better developer experience
+
+### Styling:
+- **Tailwind CSS** for rapid, responsive design
+- **Framer Motion** for smooth animations and micro-interactions
+- **Custom CSS Modules** for unique component styling
+- **Radix UI** for accessible component primitives
+
+### Core Logic:
+- **React Query/TanStack Query** for data fetching and caching
+- **Zustand** for lightweight state management
+- **React Hook Form** with Zod validation for contact forms
+
+### Backend/API Integration:
+- **Vercel Functions** for serverless API endpoints
+- **Sanity CMS** for content management (blog, projects)
+- **Resend** for email functionality
+- **Cal.com** integration for calendar booking
+
+### State Management:
+- **Zustand** for global state (theme, navigation)
+- **React Query** for server state management
+- **Local Storage** for theme persistence
+
+### Build Tool:
+- **Next.js** built-in bundler with Turbopack
+- **ESLint + Prettier** for code quality
+- **Husky** for pre-commit hooks
+
+### Deployment:
+- **Vercel** for hosting and CI/CD
+- **Vercel Analytics** for performance monitoring
+- **Google Analytics** for user insights
+
+---
+
+## 3. Architecture Design
+
+### Core Components:
+- **Layout**: Responsive navigation with mobile menu
+- **Hero Section**: Animated introduction with CTA
+- **About Section**: Professional story with skills visualization
+- **Projects Grid**: Filterable portfolio with case studies
+- **Skills Section**: Interactive skill tree with animations
+- **Blog Section**: Technical articles with search/filter
+- **Contact Section**: Form with calendar integration
+- **Footer**: Social links and quick navigation
+
+### Additional Components:
+- **Theme Toggle**: Dark/light mode switcher
+- **Project Modal**: Detailed case study viewer
+- **Loading States**: Skeleton screens and spinners
+- **Error Boundaries**: Graceful error handling
+
+---
+
+## 4. User Interface Design
+
+### Main Layout:
+- **Minimalist Design**: Clean, modern aesthetic with ample whitespace
+- **Grid System**: CSS Grid for responsive layouts
+- **Typography**: Inter for headings, system fonts for body text
+- **Color Palette**: 
+  - Primary: Deep blue (#1E40AF)
+  - Secondary: Emerald green (#10B981)
+  - Accent: Orange (#F59E0B)
+  - Neutral: Slate grays (#64748B, #F1F5F9)
+
+### Key UI Features:
+- **Smooth Animations**: Page transitions and hover effects
+- **Interactive Elements**: Hover states, focus indicators
+- **Responsive Design**: Mobile-first approach with breakpoints
+- **Accessibility**: WCAG 2.1 AA compliance
+- **Performance**: Optimized images and lazy loading
+
+### Design Direction:
+- **Modern Minimalism**: Clean lines, subtle shadows
+- **Micro-interactions**: Button hover effects, scroll animations
+- **Visual Hierarchy**: Clear typography scale and spacing
+- **Brand Consistency**: Cohesive color and component system
+
+---
+
+## 5. Data Flow Architecture
+
+### Data Sources:
+- **Sanity CMS**: Project data, blog posts, skills
+- **Local State**: Theme preferences, navigation state
+- **External APIs**: GitHub for project stats, LinkedIn for social
+
+### Flow:
+1. **Static Generation**: Pre-build pages for SEO optimization
+2. **Client-side Hydration**: Interactive features after load
+3. **API Integration**: Dynamic content from CMS
+4. **State Management**: Theme and navigation persistence
+
+---
+
+## 6. Security & Performance
+
+### Security:
+- **Input Validation**: Zod schemas for all forms
+- **Rate Limiting**: API endpoint protection
+- **CORS Configuration**: Proper cross-origin settings
+- **Environment Variables**: Secure API key management
+
+### Performance Optimizations:
+- **Image Optimization**: Next.js Image component with WebP
+- **Code Splitting**: Dynamic imports for heavy components
+- **Caching Strategy**: React Query with stale-while-revalidate
+- **Bundle Analysis**: Regular performance audits
+- **Lighthouse Optimization**: 90+ scores across metrics
+
+### Error Handling:
+- **Error Boundaries**: Graceful fallbacks for component errors
+- **Toast Notifications**: User-friendly error messages
+- **Fallback UI**: Loading states and error pages
+
+---
+
+## 7. Development Phases
+
+### Phase 1: Core Infrastructure (Week 1-2)
+- Set up Next.js project with TypeScript
+- Implement basic layout and navigation
+- Configure Tailwind CSS and design system
+- Set up Sanity CMS and content models
+
+### Phase 2: Content & Features (Week 3-4)
+- Build project showcase with filtering
+- Implement skills visualization
+- Create blog section with MDX support
+- Add contact form with validation
+
+### Phase 3: Polish & Integration (Week 5-6)
+- Add animations and micro-interactions
+- Implement dark/light mode
+- Integrate calendar booking
+- Optimize performance and SEO
+
+### Phase 4: Advanced Features (Week 7-8)
+- Add analytics and monitoring
+- Implement A/B testing framework
+- Create admin dashboard for content
+- Add internationalization support
+
+---
+
+## 8. Getting Started
+
+### Prerequisites:
+- Node.js 18+ and npm/yarn
+- Sanity CLI for CMS setup
+- Vercel account for deployment
+
+### Setup Steps:
+1. **Clone and Install**:
+   ```bash
+   git clone [repository]
+   cd portfolio-site
+   npm install
+   ```
+
+2. **Environment Variables**:
+   ```env
+   NEXT_PUBLIC_SANITY_PROJECT_ID=your_project_id
+   NEXT_PUBLIC_SANITY_DATASET=production
+   SANITY_API_TOKEN=your_token
+   RESEND_API_KEY=your_key
+   ```
+
+3. **Sanity Setup**:
+   ```bash
+   npm run sanity:deploy
+   ```
+
+4. **Development**:
+   ```bash
+   npm run dev
+   ```
+
+---
+
+## 9. Development Workflow
+
+### Code Quality:
+- **TypeScript**: Strict mode enabled
+- **ESLint**: Custom rules for Next.js
+- **Prettier**: Consistent code formatting
+- **Husky**: Pre-commit hooks for quality checks
+
+### Testing Strategy:
+- **Unit Tests**: Jest + React Testing Library
+- **Integration Tests**: Component testing
+- **E2E Tests**: Playwright for critical user flows
+- **Visual Regression**: Chromatic for UI testing
+
+### Documentation:
+- **Component Storybook**: Interactive component library
+- **API Documentation**: OpenAPI specs for endpoints
+- **README**: Comprehensive setup and contribution guides
+
+---
+
+## 10. Architecture
+
+### Architectural Pattern:
+- **Component-Based Architecture**: Reusable, composable components
+- **Feature-Based Organization**: Grouped by functionality
+- **Atomic Design**: Atoms, molecules, organisms, templates
+
+### Presentation Layer:
+- **React Components**: Functional components with hooks
+- **Styled Components**: CSS-in-JS for dynamic styling
+- **Responsive Design**: Mobile-first approach
+
+### Business Logic Layer:
+- **Custom Hooks**: Reusable logic extraction
+- **Service Layer**: API integration and data transformation
+- **State Management**: Zustand for global state
+
+### Data Layer:
+- **Sanity CMS**: Headless content management
+- **Vercel Functions**: Serverless API endpoints
+- **Local Storage**: Client-side persistence
+- **React Query**: Server state management
+
+---
+
+## Personal Style & Branding
+
+### Visual Identity:
+- **Logo**: Minimalist geometric design with initials
+- **Typography**: Inter for modern, readable text
+- **Color Psychology**: Blue for trust, green for growth, orange for creativity
+- **Imagery**: Clean, professional photos with subtle filters
+
+### Content Tone:
+- **Professional yet Approachable**: Technical expertise with personality
+- **Story-Driven**: Each project tells a narrative
+- **Educational**: Sharing knowledge and insights
+- **Authentic**: Real experiences and honest reflections
+
+### User Experience:
+- **Fast Loading**: Optimized for performance
+- **Intuitive Navigation**: Clear information architecture
+- **Engaging Interactions**: Subtle animations that enhance usability
+- **Accessible Design**: Inclusive for all users
+
+---
+
+## Success Metrics
+
+### Performance Goals:
+- **Lighthouse Score**: 90+ across all metrics
+- **Load Time**: < 2 seconds on 3G connection
+- **Core Web Vitals**: Green scores for all metrics
+
+### User Engagement:
+- **Time on Site**: > 3 minutes average
+- **Project Views**: > 70% of visitors view projects
+- **Contact Rate**: > 5% conversion to contact form
+- **Return Visitors**: > 30% repeat traffic
+
+### Business Impact:
+- **Lead Generation**: Qualified inquiries from portfolio
+- **Brand Recognition**: Consistent visual identity
+- **Professional Growth**: Showcase of evolving skills
+- **Network Building**: Connection with industry peers 
